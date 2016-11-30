@@ -1,0 +1,23 @@
+{
+  "name": "minutes",
+  "version": "1.0.0",
+  "description": "Utility bot for group conversations. Takes minutes and summarizes group conversations in chat and voice. Sends helpful chat messages when a calendar event, email, image, or document is referenced by participants.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielgwilson/minutes.git"
+  },
+  "author": "Daniel G. Wilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielgwilson/minutes/issues"
+  },
+  "homepage": "https://github.com/danielgwilson/minutes#readme",
+  "dependencies": {
+    "botbuilder": "^3.4.4",
+    "restify": "^4.3.0"
+  }
+}
