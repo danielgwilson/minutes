@@ -16,7 +16,7 @@ var connector = new builder.ChatConnector({
     appId: process.env.MICROSOFT_APP_ID,
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
-var bot = new builder.UniversalBot(connector);
+var bot = new builder.UniversalBot(connector, { persistConversationData: true });
 server.post('/api/messages', connector.listen());
 
 //=========================================================
@@ -24,5 +24,8 @@ server.post('/api/messages', connector.listen());
 //=========================================================
 
 bot.dialog('/', function (session) {
-    session.send("If you're masako, you're drunk. Go home.");
+    let messages = session.conversationData || [];
+    messages.push(session.message);
+    session.conversationData = messages;
+    session.send(messages.length);
 });
